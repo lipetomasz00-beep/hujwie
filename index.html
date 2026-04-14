@@ -1,8 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raport Finansowy 24</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0a2540, #1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 400px;
+  margin: -40px auto 40px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #00c896;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00b386;
+}
+
+.trust {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+  color: #666;
+}
+</style>
+</head>
+
 <body>
 
-<h1>Sprawdź swój raport finansowy</h1>
+<div class="hero">
+  <h1>Sprawdź swój raport finansowy</h1>
+  <p>100% darmowo • Bez zobowiązań • Wynik w 2 minuty</p>
+</div>
+
+<div class="container">
 
 <form action="https://formspree.io/f/xqewknlb" method="POST">
   <input type="text" name="name" placeholder="Imię" required>
@@ -10,6 +85,12 @@
 
   <button type="submit">Pobierz raport</button>
 </form>
+
+<div class="trust">
+  🔒 Twoje dane są bezpieczne  
+</div>
+
+</div>
 
 <script>
 document.querySelector("form").addEventListener("submit", function() {
