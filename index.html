@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raport Finansowy 24</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f7fa;
+}
+
+.header {
+  background: #0a2540;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 25px;
+}
+
+.hero h1 {
+  color: #ff3b3b;
+  font-size: 22px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #ddd;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.progress {
+  height: 6px;
+  width: 20%;
+  background: #00c896;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.step {
+  display: none;
+  text-align: center;
+}
+
+.step.active {
+  display: block;
+}
+
+button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #00c896;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💰 Raport Finansowy 24
+</div>
+
+<div class="hero">
+<h1>⚠️ Wykryto możliwe błędy w Twoim profilu finansowym</h1>
+<p>Sprawdź swój raport zanim zrobi to bank</p>
+</div>
+
+<div class="progress-bar">
+  <div id="progress" class="progress"></div>
+</div>
+
+<div class="container">
+
+<div class="step active">
+<h3>Czy wiesz, że Twój raport może zawierać błędy?</h3>
+<button onclick="next()">Tak, sprawdzam</button>
+<button onclick="next()">Nie wiem, sprawdzam</button>
+</div>
+
+<div class="step">
+<h3>Czy masz kredyty?</h3>
+<button onclick="next()">Tak</button>
+<button onclick="next()">Nie</button>
+</div>
+
+<div class="step">
+<h3>Czy miałeś opóźnienia?</h3>
+<button onclick="next()">Tak</button>
+<button onclick="next()">Nie</button>
+</div>
+
+<div class="step">
+<h3>Analizujemy Twój profil...</h3>
+<p>Sprawdzanie baz danych...</p>
+</div>
+
+<div class="step">
+<h3>Ostatni krok</h3>
+
+<form action="https://formspree.io/f/xqewknlb" method="POST">
+  <input type="text" name="name" placeholder="Imię" required>
+  <input type="email" name="email" placeholder="Email" required>
+
+  <button type="submit">Pobierz raport</button>
+</form>
+
+</div>
+
+</div>
+
+<script>
+let step = 0;
+
+function next() {
+  let steps = document.querySelectorAll(".step");
+
+  steps[step].classList.remove("active");
+  step++;
+
+  if(step === 3){
+    setTimeout(() => {
+      steps[step].classList.add("active");
+    }, 1500);
+  } else {
+    steps[step].classList.add("active");
+  }
+
+  document.getElementById("progress").style.width = ((step+1)*20) + "%";
+}
+
+document.querySelector("form").addEventListener("submit", function() {
+  setTimeout(() => {
+    window.location.href = "https://tmlead.pl/redirect/388900_1134";
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
